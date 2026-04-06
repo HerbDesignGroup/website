@@ -43,7 +43,7 @@ jobs:
         run: npm run generate
         env:
           NITRO_PRESET: github_pages
-          NUXT_APP_BASE_URL: ${{ steps.pages.outputs.base_path }}
+          NUXT_APP_BASE_URL: /
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

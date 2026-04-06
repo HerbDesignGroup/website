@@ -1,12 +1,19 @@
 import { productSlugs, serviceSlugs, siteConfig } from './app/data/site'
 
+const configuredBaseURL = process.env.NUXT_APP_BASE_URL?.trim()
+const baseURL = !configuredBaseURL || configuredBaseURL === '/'
+  ? '/'
+  : configuredBaseURL.endsWith('/')
+    ? configuredBaseURL
+    : `${configuredBaseURL}/`
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    baseURL,
     head: {
       htmlAttrs: {
         lang: 'en'
