@@ -395,6 +395,26 @@ summary,
   object-fit: cover;
 }
 
+.image-panel--contain {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.image-panel--contain::before {
+  display: none;
+}
+
+.image-panel--contain img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  border-radius: 0;
+}
+
 .button {
   display: inline-flex;
   align-items: center;

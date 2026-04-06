@@ -1,4 +1,4 @@
-import { productSlugs, serviceSlugs, siteConfig } from './app/data/site'
+import { productDocumentRoutes, productSlugs, serviceSlugs, siteConfig } from './app/data/site'
 
 const configuredBaseURL = process.env.NUXT_APP_BASE_URL?.trim()
 const baseURL = !configuredBaseURL || configuredBaseURL === '/'
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/contact', ...serviceSlugs, ...productSlugs]
+      routes: ['/', '/contact', ...serviceSlugs, ...productSlugs, ...productDocumentRoutes]
     }
   },
   routeRules: {

@@ -31,6 +31,19 @@ export interface ProductRelease {
   downloads: ProductDownload[]
 }
 
+export interface ProductFeatureImage {
+  src: string
+  alt: string
+}
+
+export interface ProductDocument {
+  slug: string
+  title: string
+  summary: string
+  to: string
+  sourcePath: string
+}
+
 export interface ProductDefinition {
   slug: string
   name: string
@@ -41,6 +54,8 @@ export interface ProductDefinition {
   releaseFallbackTag: string
   purchaseUrl: string
   releases: ProductRelease[]
+  featureImage?: ProductFeatureImage
+  documents?: ProductDocument[]
 }
 
 export const siteConfig = {
@@ -189,6 +204,40 @@ export const products: ProductDefinition[] = [
     ],
     releaseFallbackTag: 'v1.0.1',
     purchaseUrl: 'https://buy.polar.sh/polar_cl_hLOtuINmOuwO8riqMSce30BuQjiAF85qpcrRP0N8mf8',
+    featureImage: {
+      src: '/q-virtual-amp/q-virtual-amp-interface.png',
+      alt: 'Screenshot of the Q Virtual Amp interface showing the pedalboard and controls.'
+    },
+    documents: [
+      {
+        slug: 'getting-started',
+        title: 'Getting Started & Features Guide',
+        summary: 'Learn the core controls, pedalboard workflow, and built-in tools included with Q Virtual Amp.',
+        to: '/q-virtual-amp/getting-started',
+        sourcePath: '/q-virtual-amp/getting-started.md'
+      },
+      {
+        slug: 'end-user-license-agreement',
+        title: 'End User License Agreement',
+        summary: 'Review the license terms that govern installation, activation, refunds, and permitted use.',
+        to: '/q-virtual-amp/end-user-license-agreement',
+        sourcePath: '/q-virtual-amp/end-user-license-agreement.md'
+      },
+      {
+        slug: 'privacy-policy',
+        title: 'Privacy Policy',
+        summary: 'See how Q Virtual Amp handles local data, licensing, and third-party services such as Polar.sh and GitHub.',
+        to: '/q-virtual-amp/privacy-policy',
+        sourcePath: '/q-virtual-amp/privacy-policy.md'
+      },
+      {
+        slug: 'terms-of-service',
+        title: 'Terms of Service',
+        summary: 'Read the purchase, usage, refund, and legal terms that apply to Q Virtual Amp.',
+        to: '/q-virtual-amp/terms-of-service',
+        sourcePath: '/q-virtual-amp/terms-of-service.md'
+      }
+    ],
     releases: [
       {
         version: 'v1.0.1',
@@ -211,6 +260,7 @@ export const products: ProductDefinition[] = [
 
 export const serviceSlugs = services.map((service) => `/services/${service.slug}`)
 export const productSlugs = products.map((product) => `/products/${product.slug}`)
+export const productDocumentRoutes = products.flatMap((product) => product.documents?.map((document) => document.to) ?? [])
 
 export function getServiceBySlug(slug: string) {
   return services.find((service) => service.slug === slug)
@@ -218,4 +268,10 @@ export function getServiceBySlug(slug: string) {
 
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug)
+}
+
+export function getQvaDocumentBySlug(slug: string) {
+  return products
+    .find((product) => product.slug === 'q-virtual-amp')
+    ?.documents?.find((document) => document.slug === slug)
 }

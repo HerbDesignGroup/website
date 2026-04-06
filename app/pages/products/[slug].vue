@@ -31,17 +31,6 @@ const heroActions = computed(() => [
   }
 ])
 
-useHead({
-  script: [
-    {
-      src: 'https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js',
-      defer: true,
-      'data-auto-init': true,
-      tagPosition: 'bodyClose'
-    }
-  ]
-})
-
 useSeoMeta({
   title: product.name,
   description: product.summary,
@@ -76,7 +65,11 @@ useSeoMeta({
           </ul>
         </div>
 
-        <div class="card">
+        <div v-if="product.featureImage" class="image-panel image-panel--contain">
+          <img :src="product.featureImage.src" :alt="product.featureImage.alt">
+        </div>
+
+        <div v-else class="card">
           <p class="eyebrow">Purchase</p>
           <h3>Get your license and start playing.</h3>
           <p>
@@ -100,6 +93,24 @@ useSeoMeta({
           :latest-release="latestRelease"
           :older-releases="olderReleases"
         />
+      </div>
+    </section>
+
+    <section v-if="product.documents?.length" class="section-block section-block--soft">
+      <div class="container">
+        <SectionHeading
+          eyebrow="Documentation"
+          title="Guides, setup help, and policies"
+        />
+
+        <div class="card-grid card-grid--two">
+          <article v-for="document in product.documents" :key="document.slug" class="card card--feature">
+            <p class="eyebrow">Document</p>
+            <h3>{{ document.title }}</h3>
+            <p>{{ document.summary }}</p>
+            <NuxtLink :to="document.to" class="text-link">Read</NuxtLink>
+          </article>
+        </div>
       </div>
     </section>
   </div>
