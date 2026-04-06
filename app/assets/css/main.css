@@ -103,7 +103,6 @@ summary,
 }
 
 .site-main {
-  padding-bottom: 4rem;
   overflow-x: clip;
 }
 
@@ -683,7 +682,6 @@ summary,
 }
 
 .site-footer {
-  margin-top: 2rem;
   padding-top: 0;
   border-top: 0;
   background: linear-gradient(135deg, #2f3828 0%, #43523a 55%, #627254 100%);

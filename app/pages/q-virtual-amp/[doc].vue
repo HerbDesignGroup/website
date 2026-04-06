@@ -197,8 +197,7 @@ useSeoMeta({
       :title="documentInfo.title"
       :intro="documentInfo.summary"
       :actions="[
-        { label: 'Back to Q Virtual Amp', to: '/products/q-virtual-amp', variant: 'secondary' },
-        { label: 'Open raw markdown', to: documentInfo.sourcePath, external: true }
+        { label: 'Back to Q Virtual Amp', to: '/products/q-virtual-amp', variant: 'primary' },
       ]"
     />
 
