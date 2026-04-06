@@ -2,7 +2,7 @@
 
 ## What Q Virtual Amp Does
 
-Q Virtual Amp is built to help players shape their sound, practice more easily, and manage pedalboard setups in one place.
+Q Virtual Amp is built to help players shape their sound, practice more easily, and manage pedalboard setups in one place.  To get the most out of this software, pair it with an audio interface with your device manufacturer's ASIO driver.
 
 ### Core features
 

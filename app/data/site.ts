@@ -192,7 +192,7 @@ export const products: ProductDefinition[] = [
     name: 'Q Virtual Amp',
     tagline: 'A virtual practice amplifier and pedalboard for guitar.',
     summary:
-      'Q Virtual Amp is a virtual practice amplifier and pedalboard for guitar, built to help players dial in tone quickly and stay focused on playing.',
+      'Q Virtual Amp is a virtual practice amplifier and pedalboard for guitar, built to help players dial in tone quickly and stay focused on playing.  Get the most out of your audio interface.',
     description: [
       'Q Virtual Amp gives guitarists a streamlined way to plug in, shape their tone, and practice without needing a room full of hardware.',
       'From amp-style character to pedalboard-inspired flexibility, it is designed to keep the experience immediate, musical, and easy to return to every day.'
