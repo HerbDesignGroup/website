@@ -31,12 +31,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
   font-family: Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   background:
     radial-gradient(circle at top left, rgba(149, 166, 134, 0.24) 0%, rgba(149, 166, 134, 0) 30rem),
@@ -97,10 +99,12 @@ summary,
 
 .site-shell {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .site-main {
   padding-bottom: 4rem;
+  overflow-x: clip;
 }
 
  .site-header {
@@ -125,6 +129,8 @@ summary,
   display: inline-flex;
   align-items: center;
   gap: 0.9rem;
+  min-width: 0;
+  max-width: min(100%, 21rem);
   color: var(--text);
   text-decoration: none;
 }
@@ -144,6 +150,7 @@ summary,
 .brand-copy {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   line-height: 1.1;
 }
 
@@ -256,8 +263,19 @@ summary,
   background: rgba(149, 166, 134, 0.12);
 }
 
+.brand-copy strong,
+.brand-copy small,
+.hero-intro,
+.footer-links a,
+.download-list a,
+.archive-list a,
+.social-link span {
+  overflow-wrap: anywhere;
+}
+
 .hero-section {
   position: relative;
+  overflow: clip;
   padding: clamp(3rem, 5vw, 5rem) 0 2.5rem;
 }
 
@@ -767,6 +785,10 @@ summary,
     flex-wrap: wrap;
   }
 
+  .brand {
+    max-width: calc(100% - 6rem);
+  }
+
   .nav-link,
   .nav-group__label {
     width: 100%;
@@ -781,8 +803,17 @@ summary,
     gap: 0.25rem;
   }
 
-  .dropdown-panel {
+  .nav-group .dropdown-panel {
+    display: none;
     padding: 0.35rem 0.4rem 0 0.7rem;
+  }
+
+  .nav-group.is-open .dropdown-panel {
+    display: grid;
+  }
+
+  .nav-group.is-open .nav-group__label::after {
+    transform: rotate(180deg);
   }
 
   .download-list li,

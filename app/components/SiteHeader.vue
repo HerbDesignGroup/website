@@ -2,14 +2,26 @@
 import { siteConfig } from '~/data/site'
 
 const isMenuOpen = ref(false)
+const openGroup = ref<string | null>(null)
 const route = useRoute()
+
+function toggleGroup(label: string) {
+  openGroup.value = openGroup.value === label ? null : label
+}
 
 watch(
   () => route.fullPath,
   () => {
     isMenuOpen.value = false
+    openGroup.value = null
   }
 )
+
+watch(isMenuOpen, (open) => {
+  if (!open) {
+    openGroup.value = null
+  }
+})
 </script>
 
 <template>
@@ -45,8 +57,14 @@ watch(
               {{ item.label }}
             </NuxtLink>
 
-            <div v-else class="nav-group">
-              <button type="button" class="nav-group__label" :aria-label="`${item.label} menu`">
+            <div v-else class="nav-group" :class="{ 'is-open': openGroup === item.label }">
+              <button
+                type="button"
+                class="nav-group__label"
+                :aria-label="`${item.label} menu`"
+                :aria-expanded="openGroup === item.label"
+                @click="toggleGroup(item.label)"
+              >
                 {{ item.label }}
               </button>
 
