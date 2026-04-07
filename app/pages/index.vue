@@ -47,7 +47,7 @@ useSeoMeta({
         <div>
           <SectionHeading
             eyebrow="About"
-            title="A steady partner for the work that matters."
+            title="A steady partner for the work that matters"
             :intro="siteConfig.blurb"
           />
         </div>
@@ -62,7 +62,7 @@ useSeoMeta({
       <div class="container">
         <SectionHeading
           eyebrow="Values"
-          title="The way we work is just as important as what we build."
+          title="The way we work is just as important as what we build"
           intro="Every engagement is shaped by practical communication and a long-view mindset."
         />
         <FeatureGrid :items="valueCards" />
@@ -73,7 +73,7 @@ useSeoMeta({
       <div class="container">
         <SectionHeading
           eyebrow="Services"
-          title="Support where your brand and infrastructure need it most."
+          title="Support where your brand and infrastructure need it most"
           intro="From polished websites to custom internal tools, each service is designed to meet real business needs."
         />
         <FeatureGrid :items="serviceCards" :columns="2" />
