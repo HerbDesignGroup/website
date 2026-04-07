@@ -40,7 +40,7 @@ useSeoMeta({
   <div>
     <HeroSection
       eyebrow="York, Pennsylvania"
-      title="Websites and software built with honesty, patience, and care."
+      title="Consumer-focused digital products built to last"
       :intro="siteConfig.intro"
       :actions="[
         { label: 'Explore services', to: '#services' },

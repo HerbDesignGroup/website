@@ -74,7 +74,7 @@ export const siteConfig = {
   metaDescription:
     'Herb Design Group builds thoughtful websites and custom software for businesses in York, Pennsylvania and beyond.',
   intro:
-    'Herb Design Group helps businesses build websites, search visibility, and software that feel steady, useful, and well cared for.',
+    'Herb Design Group helps businesses build websites, search visibility, and software that is tailored to their needs.',
   blurb:
     'At Herb Design Group, we are passionate about providing top-quality service and solutions that provide the utmost satisfaction for our clients. Our full-trust approach is designed to help guide you on your journey to achieving your goals without pressuring you to get to the finish line as quickly as possible. Honesty, patience, and care are our core values from the moment we are introduced to each other to the moment of delivery.',
   colors: {
