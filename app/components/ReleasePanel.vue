@@ -85,7 +85,10 @@ function renderReleaseNotes(release: ProductRelease) {
               <strong>{{ release.name || release.version }}</strong>
               <p class="muted">{{ formatDate(release.publishedAt) }}</p>
             </div>
-            <span class="archive-item__toggle">View details</span>
+            <span class="archive-item__toggle">
+              <span class="archive-item__toggle-label archive-item__toggle-label--closed">View details</span>
+              <span class="archive-item__toggle-label archive-item__toggle-label--open">Hide details</span>
+            </span>
           </summary>
 
           <div class="archive-item__content">
