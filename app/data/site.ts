@@ -58,7 +58,6 @@ export interface ProductDefinition {
   tagline: string
   summary: string
   description: string[]
-  highlights: string[]
   releaseFallbackTag: string
   releaseSource?: ProductReleaseSource
   purchaseUrl: string
@@ -199,17 +198,12 @@ export const products: ProductDefinition[] = [
   {
     slug: 'q-virtual-amp',
     name: 'Q Virtual Amp',
-    tagline: 'A virtual practice amplifier and pedalboard for guitar.',
+    tagline: 'A virtual practice amplifier and pedalboard for guitar',
     summary:
       'Q Virtual Amp is a virtual practice amplifier and pedalboard for guitar, built to help players dial in tone quickly and stay focused on playing.  Get the most out of your audio interface.',
     description: [
-      'Q Virtual Amp gives guitarists a streamlined way to plug in, shape their tone, and practice without needing a room full of hardware.',
-      'From amp-style character to pedalboard-inspired flexibility, it is designed to keep the experience immediate, musical, and easy to return to every day.'
-    ],
-    highlights: [
-      'A focused virtual amp and pedalboard workflow for everyday guitar practice',
-      'Simple purchase and download access from one place',
-      'A clean interface built to keep tone shaping close at hand'
+      'Q Virtual Amp gives guitarists a streamlined way to plug in, shape their tone, and practice without needing a room full of hardware.  Experiment with different effect chains with limitless possibilities to unlock your new sound.',
+      'To get the most out of this software, pair it with your audio interface and ensure you have your device manufacturer\'s ASIO driver installed for a seamless experience with real-time playback.  Start rocking today!'
     ],
     releaseFallbackTag: 'v1.0.1',
     releaseSource: {

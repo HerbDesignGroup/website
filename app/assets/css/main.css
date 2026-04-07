@@ -174,10 +174,6 @@ summary,
   box-shadow: var(--shadow-sm);
 }
 
-.nav-toggle:hover {
-  transform: translateY(-1px);
-}
-
 .site-nav {
   display: none;
   width: 100%;
@@ -330,7 +326,7 @@ summary,
   font-size: clamp(2.6rem, 4.8vw, 4.25rem);
   line-height: 0.98;
   margin: 0.4rem 0 1rem;
-  max-width: 12ch;
+  max-width: 18ch;
 }
 
 .hero-intro,
@@ -376,14 +372,15 @@ summary,
 }
 
 .card:hover,
-.callout-panel:hover,
-.image-panel:hover {
+.callout-panel:hover {
   transform: translateY(-4px);
   box-shadow: 0 24px 64px rgba(19, 28, 17, 0.12);
 }
 
 .image-panel {
   padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .image-panel img {

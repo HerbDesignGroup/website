@@ -67,10 +67,6 @@ useSeoMeta({
           <div class="page-copy">
             <p v-for="paragraph in product.description" :key="paragraph">{{ paragraph }}</p>
           </div>
-
-          <ul class="bullet-list">
-            <li v-for="highlight in product.highlights" :key="highlight">{{ highlight }}</li>
-          </ul>
         </div>
 
         <div v-if="product.featureImage" class="image-panel image-panel--contain">

@@ -22,12 +22,6 @@ const processCards = siteConfig.process.map((step, index) => ({
   text: step.text
 }))
 
-const partnershipHighlights = [
-  'Brand-aware websites shaped around how your business actually works',
-  'Reliable hosting and SEO guidance that supports long-term visibility',
-  'Custom software solutions built to stay useful, maintainable, and clear'
-]
-
 useSeoMeta({
   title: 'Home',
   description: siteConfig.metaDescription,
@@ -91,12 +85,9 @@ useSeoMeta({
         <div>
           <SectionHeading
             eyebrow="Working together"
-            title="Practical guidance without unnecessary pressure."
+            title="Practical guidance without unnecessary pressure"
             intro="The goal is not to rush you into decisions. It is to build something useful, steady, and aligned with where your business is headed."
           />
-          <ul class="bullet-list">
-            <li v-for="item in partnershipHighlights" :key="item">{{ item }}</li>
-          </ul>
         </div>
 
         <div class="card">
@@ -113,7 +104,7 @@ useSeoMeta({
       <div class="container">
         <SectionHeading
           eyebrow="Process"
-          title="A calmer path from idea to launch."
+          title="A calmer path from idea to launch"
           intro="We keep the work grounded, realistic, and aligned with your goals from the first conversation onward."
         />
         <FeatureGrid :items="processCards" />
