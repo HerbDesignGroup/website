@@ -44,7 +44,7 @@ function renderReleaseNotes(release: ProductRelease) {
         <div>
           <p class="eyebrow">Latest version</p>
           <h3>{{ latestRelease.name || latestRelease.version }}</h3>
-          <p class="muted">Available {{ formatDate(latestRelease.publishedAt) }}</p>
+          <p class="muted">{{ formatDate(latestRelease.publishedAt) }}</p>
         </div>
       </div>
 

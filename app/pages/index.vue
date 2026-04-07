@@ -92,7 +92,7 @@ useSeoMeta({
 
         <div class="card">
           <p class="eyebrow">What that looks like</p>
-          <h3>Clear communication, thoughtful pacing, and solutions that fit.</h3>
+          <h3>Clear communication, thoughtful pacing, and solutions that fit</h3>
           <p>
             From first conversations through launch, the process stays collaborative, honest, and grounded in what will serve your business well over time.
           </p>

@@ -9,7 +9,7 @@ const year = new Date().getFullYear()
     <div class="container footer-grid">
       <div>
         <p class="eyebrow">{{ siteConfig.companyName }}</p>
-        <h2>Thoughtful digital work, built to last.</h2>
+        <h2>Thoughtful digital work, built to last</h2>
         <p class="footer-copy">
           {{ siteConfig.intro }}
         </p>
