@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useProductReleases } from '~/composables/useProductReleases'
 import { getProductBySlug } from '~/data/site'
 
 const route = useRoute()
@@ -12,10 +13,17 @@ if (!matchedProduct) {
 }
 
 const product = matchedProduct
-const latestRelease = computed(() => product.releases[0] ?? null)
-const olderReleases = computed(() => product.releases.slice(1))
-const latestDownload = computed(() => latestRelease.value?.downloads?.[0] ?? null)
+const { releases } = useProductReleases(product)
+const latestRelease = computed(() => releases.value[0] ?? null)
+const olderReleases = computed(() => releases.value.slice(1))
 const purchaseUrl = computed(() => product.purchaseUrl)
+const latestDownloadUrl = computed(() => {
+  if (product.releaseSource?.provider === 'github' && product.releaseSource.latestAssetName) {
+    return `https://github.com/${product.releaseSource.owner}/${product.releaseSource.repo}/releases/latest/download/${encodeURIComponent(product.releaseSource.latestAssetName)}`
+  }
+
+  return latestRelease.value?.downloads?.[0]?.url || purchaseUrl.value
+})
 
 const heroActions = computed(() => [
   {
@@ -24,8 +32,8 @@ const heroActions = computed(() => [
     external: true
   },
   {
-    label: 'Download current version',
-    to: latestDownload.value?.url || purchaseUrl.value,
+    label: 'Download latest version',
+    to: latestDownloadUrl.value,
     external: true,
     variant: 'secondary' as const
   }

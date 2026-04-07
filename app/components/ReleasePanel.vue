@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import MarkdownIt from 'markdown-it'
 import type { ProductRelease } from '~/data/site'
 
-const props = defineProps<{
+defineProps<{
   latestRelease: ProductRelease | null
   olderReleases: ProductRelease[]
 }>()
+
+const markdown = new MarkdownIt({
+  html: false,
+  linkify: true,
+  breaks: true
+})
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat('en-US', {
@@ -12,6 +19,14 @@ function formatDate(date: string) {
     day: 'numeric',
     year: 'numeric'
   }).format(new Date(date))
+}
+
+function getReleaseNotesSource(release: ProductRelease) {
+  return release.notesMarkdown || release.notes.join('\n\n')
+}
+
+function renderReleaseNotes(release: ProductRelease) {
+  return markdown.render(getReleaseNotesSource(release))
 }
 </script>
 
@@ -25,39 +40,81 @@ function formatDate(date: string) {
     </div>
 
     <div v-if="latestRelease" class="card release-card release-card--latest">
-      <p class="eyebrow">Latest version</p>
-      <h3>{{ latestRelease.name || latestRelease.version }}</h3>
-      <p class="muted">Available {{ formatDate(latestRelease.publishedAt) }}</p>
-
-      <div v-if="latestRelease.notes?.length" class="page-copy release-notes">
-        <p v-for="line in latestRelease.notes" :key="line">{{ line }}</p>
+      <div class="release-card__top">
+        <div>
+          <p class="eyebrow">Latest version</p>
+          <h3>{{ latestRelease.name || latestRelease.version }}</h3>
+          <p class="muted">Available {{ formatDate(latestRelease.publishedAt) }}</p>
+        </div>
       </div>
 
-      <ul v-if="latestRelease.downloads.length" class="download-list">
-        <li v-for="download in latestRelease.downloads" :key="download.url">
-          <a :href="download.url" target="_blank" rel="noreferrer">
-            {{ download.label }}
+      <div
+        v-if="getReleaseNotesSource(latestRelease)"
+        class="page-copy release-notes"
+        v-html="renderReleaseNotes(latestRelease)"
+      />
+
+      <div v-if="latestRelease.downloads.length" class="download-actions">
+        <div v-for="download in latestRelease.downloads" :key="download.url" class="download-item">
+          <div class="download-item__meta">
+            <strong class="download-item__name">{{ download.label }}</strong>
+            <span class="muted">{{ download.size || 'Latest download' }}</span>
+          </div>
+
+          <a
+            :href="download.url"
+            target="_blank"
+            rel="noreferrer"
+            class="button button-primary"
+          >
+            Download
           </a>
-          <span>{{ download.size || 'Download' }}</span>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <div v-if="olderReleases.length" class="card archive-card">
       <div class="archive-card__heading">
-        <h3>Past versions</h3>
-        <p class="muted">Earlier downloads will appear here as additional versions become available.</p>
+        <p class="eyebrow">Past versions</p>
       </div>
 
-      <ul class="archive-list">
-        <li v-for="release in olderReleases" :key="release.version">
-          <div>
-            <strong>{{ release.name || release.version }}</strong>
-            <p>{{ formatDate(release.publishedAt) }}</p>
+      <div class="archive-accordion">
+        <details v-for="release in olderReleases" :key="release.version" class="archive-item">
+          <summary class="archive-item__summary">
+            <div>
+              <strong>{{ release.name || release.version }}</strong>
+              <p class="muted">{{ formatDate(release.publishedAt) }}</p>
+            </div>
+            <span class="archive-item__toggle">View details</span>
+          </summary>
+
+          <div class="archive-item__content">
+            <div
+              v-if="getReleaseNotesSource(release)"
+              class="page-copy release-notes"
+              v-html="renderReleaseNotes(release)"
+            />
+
+            <div v-if="release.downloads.length" class="download-actions download-actions--stacked">
+              <div v-for="download in release.downloads" :key="download.url" class="download-item">
+                <div class="download-item__meta">
+                  <strong class="download-item__name">{{ download.label }}</strong>
+                  <span class="muted">{{ download.size || 'Installer' }}</span>
+                </div>
+
+                <a
+                  :href="download.url"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="button button-secondary"
+                >
+                  Download
+                </a>
+              </div>
+            </div>
           </div>
-          <a :href="release.downloads[0]?.url" target="_blank" rel="noreferrer">Download</a>
-        </li>
-      </ul>
+        </details>
+      </div>
     </div>
   </section>
 </template>

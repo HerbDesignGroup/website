@@ -28,7 +28,15 @@ export interface ProductRelease {
   name?: string
   publishedAt: string
   notes: string[]
+  notesMarkdown?: string
   downloads: ProductDownload[]
+}
+
+export interface ProductReleaseSource {
+  provider: 'github'
+  owner: string
+  repo: string
+  latestAssetName?: string
 }
 
 export interface ProductFeatureImage {
@@ -52,6 +60,7 @@ export interface ProductDefinition {
   description: string[]
   highlights: string[]
   releaseFallbackTag: string
+  releaseSource?: ProductReleaseSource
   purchaseUrl: string
   releases: ProductRelease[]
   featureImage?: ProductFeatureImage
@@ -203,6 +212,12 @@ export const products: ProductDefinition[] = [
       'A clean interface built to keep tone shaping close at hand'
     ],
     releaseFallbackTag: 'v1.0.1',
+    releaseSource: {
+      provider: 'github',
+      owner: 'HerbDesignGroup',
+      repo: 'Q-Virtual-Amp',
+      latestAssetName: 'QVirtualAmpInstaller.msi'
+    },
     purchaseUrl: 'https://buy.polar.sh/polar_cl_hLOtuINmOuwO8riqMSce30BuQjiAF85qpcrRP0N8mf8',
     featureImage: {
       src: '/q-virtual-amp/q-virtual-amp-interface.png',
@@ -249,7 +264,7 @@ export const products: ProductDefinition[] = [
         downloads: [
           {
             label: 'QVirtualAmpInstaller.msi',
-            url: 'https://github.com/HerbDesignGroup/Q-Virtual-Amp/releases/download/v1.0.1/QVirtualAmpInstaller.msi',
+            url: 'https://github.com/HerbDesignGroup/Q-Virtual-Amp/releases/latest/download/QVirtualAmpInstaller.msi',
             size: '5.39 MB'
           }
         ]
