@@ -38,8 +38,7 @@ useSeoMeta({
       :title="service.name"
       :intro="service.summary"
       :actions="[
-        { label: 'Back to home', to: '/', variant: 'secondary' },
-        { label: 'Explore websites', to: '/services/websites' }
+        { label: 'Let\'s get in touch!', to: '/contact', variant: 'primary' },
       ]"
     />
 
