@@ -89,7 +89,7 @@ export const siteConfig = {
     {
       label: 'Services',
       children: [
-        { label: 'Websites', to: '/services/websites' },
+        { label: 'Website Development', to: '/services/websites' },
         { label: 'Hosting', to: '/services/hosting' },
         { label: 'SEO', to: '/services/seo' },
         { label: 'Custom Software', to: '/services/custom-software' }
@@ -130,7 +130,7 @@ export const siteConfig = {
 export const services: ServiceDefinition[] = [
   {
     slug: 'websites',
-    name: 'Websites',
+    name: 'Website Development',
     summary:
       'Design and development for brands that need a site that feels polished, dependable, and easy to grow.',
     description: [
