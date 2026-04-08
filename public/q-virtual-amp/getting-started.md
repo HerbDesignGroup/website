@@ -1,83 +1,195 @@
 # Q Virtual Amp Features Guide
 
-## What Q Virtual Amp Does
+## Overview
 
-Q Virtual Amp is built to help players shape their sound, practice more easily, and manage pedalboard setups in one place.  To get the most out of this software, pair it with an audio interface with your device manufacturer's ASIO driver.
+Q Virtual Amp lets you plug in, build a pedalboard, save your favorite setups, and practice with built-in tools like a tuner and metronome.
 
-### Core features
+This guide is meant to help you find things quickly and understand how to use them.
 
-- **Live amp and pedalboard experience** for running your instrument through a customizable chain of effects.
-- **Audio input and output selection** so you can choose the gear you want to play through.
-- **Input channel selection** for audio interfaces with multiple channels.
-- **Quick audio controls** to start, stop, or restart audio whenever needed.
-- **Direct Monitor mode** for hearing your clean signal without the pedalboard processing.
-- **Master Volume control** for adjusting the overall output level.
-- **Input level meter** so you can quickly see whether signal is reaching the app.
-- **Pedal on/off switching** to compare your sound with and without each effect.
-- **Drag-and-drop pedal reordering** to change the order of effects in the signal chain.
-- **Add, remove, and reset pedals** directly from the pedalboard view.
-- **Save Pedalboard** to create a file containing your current pedalboard settings for later use.
-- **Load Pedalboard** to bring a saved setup back into the app.
-- **Built-in tuner** for checking pitch and tuning up quickly.
-- **Built-in metronome** for practicing with a steady click at your chosen tempo.
+---
 
-### Pedalboard workflow
+## Getting Around the App
 
-Once unlocked, the pedalboard is designed to be quick and hands-on:
+### Top menu bar
 
-1. **Add a pedal** from the built-in pedal list.
-2. **Turn it on or off** as needed.
-3. **Adjust its controls** to shape your tone.
-4. **Drag it into a new position** to hear how order changes the result.
-5. **Reset or remove it** if you want to start over.
-6. **Save the pedalboard** so the full setup can be loaded again later.
+The menu bar runs across the top of the app and includes:
 
-### How to use key controls
+- **File**
+  - **Set Input/Output Devices** to choose your input, output, and input channel
+  - **Save Pedalboard** to save your current setup
+  - **Load Pedalboard** to open a saved setup
+  - **Exit** to close the app
 
-- **Turn a pedal on or off** by clicking the small virtual LED next to the pedal name. When it is lit, the pedal is active.
-- **Reorder pedals** by dragging the colored tab on the left side of a pedal and dropping it into a new spot in the chain.
-- **Adjust each effect** using the sliders on the pedal. This lets you quickly dial in more gain, tone, level, mix, tempo, and other settings depending on the pedal.
-- **Reset a pedal** with the **Reset Pedal** button if you want to return it to its default settings.  Double-click a slider to reset just that value.
-- **Remove a pedal** with the **Remove Pedal** button if you no longer want it in the chain.
-- **Add a new pedal** by clicking **Add Pedal** and choosing one from the list.
-- **Save your setup** with **Save Pedalboard** and bring it back later with **Load Pedalboard**.
-- **Use the tuner** by turning it on, then playing a single note so the display can show whether you are sharp, flat, or in tune.
-- **Use the metronome** by pressing **Play/Stop** and setting the tempo to the BPM you want for practice.
+- **Edit**
+  - **Load Preset** to quickly load built-in pedalboard starting points
+    - **Comfortably Strum** for a spacious, sustaining lead sound
+    - **Purple Phase** for a saturated fuzz tone with swirling movement
+    - **Volcano** for a hot, wide, high-gain lead voice
+    - **Sultans of String** for a clean, articulate, lightly driven tone
+    - **Now is Soon** for a chiming, pulsing clean texture
+    - **Unsatisfied** for a raw, buzzy, mid-forward fuzz sound
+    - **This Child Ain't Mine** for a smooth, singing rock lead tone
+    - **Someone Knows** for a thick, punchy desert-rock drive sound
+    - **Czechia Epic** for a layered, harmonically rich arena lead tone
+    - **Stand Back** for a bright, chorus-soaked clean sound
+    - **Johnathan is Well** for a snappy vintage overdrive tone
+    - **Cows on a Jaunt** for a tight, aggressive riff-driven distortion sound
+    - **Unusual Concoction** for a warm, smoky blues-rock voice
+    - **Gosh** for a dense, fuzzy wall-of-sound texture
+    - **Able to Continue** for a crisp, funky clean tone with bite
+  - **Reset All Pedals** to return every pedal to its default settings
+  - **Clear Pedalboard** to remove every pedal from the board
+
+- **View**
+  - **Show Tuner** to show or hide the tuner in the Controls sidebar
+  - **Show Metronome** to show or hide the metronome in the Controls sidebar
+
+- **Help**
+  - **Getting Started**
+  - **End User License Agreement**
+  - **Privacy Policy**
+  - **Terms of Service**
+  - **About**
+
+### Controls sidebar
+
+The **Controls** section is on the left side of the app. This is where you can:
+
+- turn audio on or off
+- use **Direct Monitor**
+- adjust **Master Volume** on a `0–11` scale
+- open and use the **Tuner**
+- open and use the **Metronome**
+
+### Pedalboard area
+
+The center of the app is your **Pedalboard**. This is where you:
+
+- add pedals
+- turn pedals on or off
+- adjust pedal settings
+- drag pedals into a different order
+- remove or reset pedals
+
+---
+
+## Audio Setup
+
+To start playing through the app:
+
+1. Open **File > Set Input/Output Devices**.
+2. Choose your input device and output device.
+3. If your interface has more than one input, choose the input channel you want.
+4. Use **Start Audio** in the Controls sidebar.
+
+### Helpful controls
+
+- **Direct Monitor** lets you hear your clean signal without the pedalboard sound.
+- **Master Volume** controls the overall output level.
+- The level meter at the bottom helps you confirm that the app is receiving signal.
+
+---
+
+## Using the Tuner
+
+The tuner is now part of the **Controls** sidebar instead of the pedal list.
+
+- If it is hidden, turn it back on with **View > Show Tuner**.
+- Click **Start Tuner**.
+- Play one note at a time.
+- Watch the display to see the note and whether you are centered on pitch.
+
+---
+
+## Using the Metronome
+
+The metronome is also in the **Controls** sidebar.
+
+- If it is hidden, turn it back on with **View > Show Metronome**.
+- Set the **BPM** to the tempo you want.
+- Set the **time signature** using the two number boxes.
+- Click **Start Metronome** to begin the click.
+- The flashing beat dots show where you are in the bar while it runs.
+
+---
+
+## Building a Pedalboard
+
+Once the pedalboard is unlocked, you can build and manage your sound very quickly.
+
+### Add a pedal
+
+- Click **Add Pedal** in the lower-right area of the pedalboard.
+- Choose the effect you want from the list.
+
+### Turn a pedal on or off
+
+- Click the small **light/indicator** next to the pedal name.
+- When it is lit, the pedal is active.
+
+### Change settings
+
+- Use the sliders on each pedal to shape the sound.
+- Double-click a slider to return that one control to its default setting.
+
+### Reorder pedals
+
+- Drag the colored strip on the left side of a pedal.
+- Drop it into a new spot to change the order of your effects.
+
+### Reset or remove a pedal
+
+- Use **Reset Pedal** to return a pedal to its default settings.
+- Use **Remove Pedal** to take it off the board.
+
+### Save and load your setup
+
+- Use **File > Save Pedalboard** to save your current setup as a `.qvapb` pedalboard file.
+- Use **File > Load Pedalboard** to bring it back later.
+- On Windows, installed `.qvapb` files can be associated with **Q Virtual Amp** and show the app icon.
+- Use **Edit > Load Preset** when you want a fast built-in starting point and then tweak it to taste.
 
 ---
 
 ## Available Pedals
 
-### Drive, tone, and dynamics
+### Drive and tone shaping
 
-| Pedal | What it does | Controls |
+| Pedal | What it does | Main controls |
 | --- | --- | --- |
-| **Fuzz** | Creates a thick, buzzy, aggressive fuzz tone. | **Fuzz** adjusts the amount of fuzz/saturation.<br>**Tone** makes the sound darker or brighter.<br>**Level** sets the pedal's output volume. |
-| **Overdrive** | Adds warm, amp-like breakup that responds well for classic crunch tones. | **Drive** increases the amount of overdrive.<br>**Tone** shapes brightness.<br>**Level** sets output volume. |
-| **Distortion** | Produces a heavier, tighter, more aggressive high-gain sound. | **Drive** increases gain and intensity.<br>**Tone** shapes the top end and overall bite.<br>**Level** sets output volume. |
-| **Compressor** | Smooths out volume peaks and helps notes ring out more evenly with added sustain. | **Threshold** decides how soon compression starts working.<br>**Sustain** increases the amount of evening-out and note hold.<br>**Level** sets output volume. |
-| **10 Band EQ** | Lets you shape your overall tone by boosting or cutting specific frequency ranges. | **Gain** adjusts the incoming level into the EQ.<br>**31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, 16k** adjust those frequency bands.<br>**Vol** sets the overall output level after EQ. |
-| **Filter** | Rolls off high end for a darker, smoother, more controlled tone. | **Cutoff** decides how much brightness is allowed through.<br>**Level** sets output volume. |
+| **Fuzz** | Adds a thick, buzzy, aggressive sound. | **Fuzz**, **Tone**, **Level** |
+| **Overdrive** | Adds warm breakup for crunchy rhythm and lead tones. | **Drive**, **Tone**, **Level** |
+| **Distortion** | Gives you a heavier, more aggressive gain sound. | **Drive**, **Tone**, **Level** |
+| **Compressor** | Smooths out peaks and helps notes feel more even and sustained. | **Threshold**, **Sustain**, **Level** |
+| **10 Band EQ** | Lets you boost or cut different parts of your tone. | **Gain**, individual frequency sliders, **Vol** |
+| **Filter** | Softens the top end for a darker sound. | **Cutoff**, **Level** |
 
-### Time, space, and movement
+### Movement and ambience
 
-| Pedal | What it does | Controls |
+| Pedal | What it does | Main controls |
 | --- | --- | --- |
-| **Delay** | Adds repeats and echo for depth, rhythm, and lead ambience. | **Time ms** sets the spacing between repeats.<br>**Feedback** controls how many repeats you hear.<br>**Mix** balances dry sound and echoed sound. |
-| **Chorus** | Creates a wider, shimmer-like doubling effect for a fuller sound. | **Rate Hz** changes the speed of the movement.<br>**Depth ms** changes how wide the chorus sweep feels.<br>**Mix** blends the effect with the dry signal. |
-| **Phaser** | Adds a sweeping, swirling motion often used for classic vintage textures. | **Rate Hz** controls sweep speed.<br>**Depth** controls how strong the sweep is.<br>**Feedback** increases resonance and intensity. |
-| **Flanger** | Produces a jet-like sweep with a more dramatic, metallic movement than chorus. | **Rate Hz** controls sweep speed.<br>**Depth ms** changes the width of the sweep.<br>**Feedback** increases intensity and resonance. |
-| **Reverb** | Adds a sense of room, space, and sustain to make the sound feel bigger. | **Dwell** controls how long the reverb hangs on.<br>**Tone** makes the reverb darker or brighter.<br>**Mix** balances dry sound and reverb. |
+| **Delay** | Adds repeats and echo. | **Time**, **Feedback**, **Mix** |
+| **Tremolo** | Creates a pulsing volume effect, from gentle sway to choppy movement. | **Speed**, **Depth**, **Wave**, **Level** |
+| **Chorus** | Adds width and shimmer for a fuller sound. | **Rate**, **Depth**, **Mix** |
+| **Phaser** | Adds a sweeping, swirling motion. | **Rate**, **Depth**, **Feedback** |
+| **Flanger** | Creates a more dramatic, jet-like sweep. | **Rate**, **Depth**, **Feedback** |
+| **Reverb** | Adds space and a room-like or ambient feel. | **Dwell**, **Tone**, **Mix** |
 
-### Utility pedals
+---
 
-| Pedal | What it does | Controls |
-| --- | --- | --- |
-| **Tuner** | Helps you tune by showing the current note and whether you are centered on pitch. | **On/Off** turns pitch monitoring on or off. |
-| **Metronome** | Provides a steady click for timing and practice. | **Play/Stop** turns the click on or off.<br>**Tempo / BPM** sets the speed. |
+## Licensing
+
+If the pedalboard is locked, you will see a message in the main area with an **Activate License** button directly underneath it.
+
+- Click **Activate License**
+- Paste your license key
+- Press **Activate**
+
+Once activated, the full pedalboard becomes available.
 
 ---
 
 ## Support
 
-If you run into any issues or need help, please contact **support@herbdesigngroup.com**.
+If you need help, contact **support@herbdesigngroup.com**.
+
