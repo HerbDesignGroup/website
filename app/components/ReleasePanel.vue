@@ -28,6 +28,41 @@ function getReleaseNotesSource(release: ProductRelease) {
 function renderReleaseNotes(release: ProductRelease) {
   return markdown.render(getReleaseNotesSource(release))
 }
+
+function detectPlatformFromName(name: string | undefined) {
+  if (!name) return undefined
+  const s = name.toLowerCase()
+
+  // Windows
+  if (/\.(msi|exe)$/.test(s) || /\bwindows\b|\bwin32\b|\bwin64\b/.test(s)) {
+    return 'Windows'
+  }
+
+  // Mac universal builds
+  if (/universal/.test(s) && /\bmac\b|\bmacos\b|\bdarwin\b|\bosx\b|\bapple\b/.test(s)) {
+    return 'macOS (Universal)'
+  }
+
+  // Mac Apple Silicon
+  if (/(?:\bmac\b|\bmacos\b|\bdarwin\b|\bosx\b|\bapple\b).*?(?:arm|arm64|aarch64|apple[-_ ]?silicon)/.test(s)
+    || /(?:arm|arm64|aarch64).*?(?:mac|macos|dmg|pkg|zip)/.test(s)) {
+    return 'macOS (Apple Silicon)'
+  }
+
+  // Mac Intel
+  if (/(?:\bmac\b|\bmacos\b|\bdarwin\b|\bosx\b|\bapple\b).*?(?:x86_64|x64|intel|i386)/.test(s)
+    || /(?:x86_64|x64|intel|i386).*?(?:mac|macos|dmg|pkg|zip)/.test(s)) {
+    return 'macOS (Intel)'
+  }
+
+  return undefined
+}
+
+function getPlatformLabel(releaseDownload: { label: string; url: string }) {
+  return (
+    detectPlatformFromName(releaseDownload.label) || detectPlatformFromName(releaseDownload.url)
+  )
+}
 </script>
 
 <template>
@@ -57,7 +92,7 @@ function renderReleaseNotes(release: ProductRelease) {
       <div v-if="latestRelease.downloads.length" class="download-actions">
         <div v-for="download in latestRelease.downloads" :key="download.url" class="download-item">
           <div class="download-item__meta">
-            <strong class="download-item__name">{{ download.label }}</strong>
+            <strong class="download-item__name">{{ getPlatformLabel(download) || download.label }}</strong>
             <span class="muted">{{ download.size || 'Latest download' }}</span>
           </div>
 
@@ -101,7 +136,7 @@ function renderReleaseNotes(release: ProductRelease) {
             <div v-if="release.downloads.length" class="download-actions download-actions--stacked">
               <div v-for="download in release.downloads" :key="download.url" class="download-item">
                 <div class="download-item__meta">
-                  <strong class="download-item__name">{{ download.label }}</strong>
+                  <strong class="download-item__name">{{ getPlatformLabel(download) || download.label }}</strong>
                   <span class="muted">{{ download.size || 'Installer' }}</span>
                 </div>
 
