@@ -15,41 +15,41 @@ This guide is meant to help you find things quickly and understand how to use th
 The menu bar runs across the top of the app and includes:
 
 - **File**
-  - **Set Input/Output Devices** to choose your input, output, and input channel
-  - **Save Pedalboard** to save your current setup
-  - **Load Pedalboard** to open a saved setup
-  - **Exit** to close the app
+    - **Set Input/Output Devices** to choose your input, output, and input channel
+    - **Save Pedalboard** to save your current setup
+    - **Load Pedalboard** to open a saved setup
+    - **Exit** to close the app
 
 - **Edit**
-  - **Load Preset** to quickly load built-in pedalboard starting points
-    - **Comfortably Strum** for a spacious, sustaining lead sound
-    - **Purple Phase** for a saturated fuzz tone with swirling movement
-    - **Volcano** for a hot, wide, high-gain lead voice
-    - **Sultans of String** for a clean, articulate, lightly driven tone
-    - **Now is Soon** for a chiming, pulsing clean texture
-    - **Unsatisfied** for a raw, buzzy, mid-forward fuzz sound
-    - **This Child Ain't Mine** for a smooth, singing rock lead tone
-    - **Someone Knows** for a thick, punchy desert-rock drive sound
-    - **Czechia Epic** for a layered, harmonically rich arena lead tone
-    - **Stand Back** for a bright, chorus-soaked clean sound
-    - **Johnathan is Well** for a snappy vintage overdrive tone
-    - **Cows on a Jaunt** for a tight, aggressive riff-driven distortion sound
-    - **Unusual Concoction** for a warm, smoky blues-rock voice
-    - **Gosh** for a dense, fuzzy wall-of-sound texture
-    - **Able to Continue** for a crisp, funky clean tone with bite
-  - **Reset All Pedals** to return every pedal to its default settings
-  - **Clear Pedalboard** to remove every pedal from the board
+    - **Load Preset** to quickly load built-in pedalboard starting points
+        - **Comfortably Strum** for a spacious, sustaining lead sound
+        - **Purple Phase** for a saturated fuzz tone with swirling movement
+        - **Volcano** for a hot, wide, high-gain lead voice
+        - **Sultans of String** for a clean, articulate, lightly driven tone
+        - **Now is Soon** for a chiming, pulsing clean texture
+        - **Unsatisfied** for a raw, buzzy, mid-forward fuzz sound
+        - **This Child Ain't Mine** for a smooth, singing rock lead tone
+        - **Someone Knows** for a thick, punchy desert-rock drive sound
+        - **Czechia Epic** for a layered, harmonically rich arena lead tone
+        - **Stand Back** for a bright, chorus-soaked clean sound
+        - **Johnathan is Well** for a snappy vintage overdrive tone
+        - **Cows on a Jaunt** for a tight, aggressive riff-driven distortion sound
+        - **Unusual Concoction** for a warm, smoky blues-rock voice
+        - **Gosh** for a dense, fuzzy wall-of-sound texture
+        - **Able to Continue** for a crisp, funky clean tone with bite
+    - **Reset All Pedals** to return every pedal to its default settings
+    - **Clear Pedalboard** to remove every pedal from the board
 
 - **View**
-  - **Show Tuner** to show or hide the tuner in the Controls sidebar
-  - **Show Metronome** to show or hide the metronome in the Controls sidebar
+    - **Show Tuner** to show or hide the tuner in the Controls sidebar
+    - **Show Metronome** to show or hide the metronome in the Controls sidebar
 
 - **Help**
-  - **Getting Started**
-  - **End User License Agreement**
-  - **Privacy Policy**
-  - **Terms of Service**
-  - **About**
+    - **Getting Started**
+    - **End User License Agreement**
+    - **Privacy Policy**
+    - **Terms of Service**
+    - **About**
 
 ### Controls sidebar
 
