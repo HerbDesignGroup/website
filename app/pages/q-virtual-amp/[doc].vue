@@ -205,10 +205,7 @@ useSeoMeta({
       <div class="container">
         <article class="card doc-shell">
           <div class="doc-meta">
-            <p class="eyebrow">Included with Q Virtual Amp</p>
-            <p class="muted">
-              This page is rendered from the original markdown document bundled in `public/q-virtual-amp`.
-            </p>
+            <p class="eyebrow">Documentation</p>
           </div>
 
           <div class="doc-content" v-html="renderedHtml" />
