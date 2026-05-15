@@ -84,7 +84,10 @@ export const siteConfig = {
     { label: 'Home', to: '/' },
     {
       label: 'Products',
-      children: [{ label: 'Q Virtual Amp', to: '/products/q-virtual-amp' }]
+      children: [
+        { label: 'Q Virtual Amp', to: '/products/q-virtual-amp' },
+        { label: 'Quantum Photoboom', to: '/products/quantum-photoboom' }
+      ]
     },
     {
       label: 'Services',
@@ -264,6 +267,76 @@ export const products: ProductDefinition[] = [
         ]
       }
     ]
+  },
+  {
+    slug: 'quantum-photoboom',
+    name: 'Quantum Photoboom',
+    tagline: 'RAW-capable photo editing with photobooks, precise adjustments, and flexible export',
+    summary:
+      'Quantum Photoboom is a robust desktop photo editor built for RAW files and common image formats. Organize work into photobooks, refine tone and color with a full editing toolkit, and export finished images locally—all without handing your photos off to the cloud.',
+    description: [
+      'Quantum Photoboom gives photographers a focused environment to import, review, and edit entire sets: a live preview, histogram-aware controls, masking with on-device assisted selection, and a filmstrip that keeps every image in the photobook within reach.',
+      'From global exposure and color grading to lens corrections, noise reduction, and batch-friendly export to JPEG, PNG, or WEBP, the app is designed for a fast, dependable workflow that stays on your machine. Purchase a license, download the latest build, and start processing your next shoot.'
+    ],
+    releaseFallbackTag: 'v0.1.0',
+    releaseSource: {
+      provider: 'github',
+      owner: 'HerbDesignGroup',
+      repo: 'Quantum-Photoboom',
+      latestAssetName: 'Quantum.Photoboom_0.1.0_x64-setup.exe'
+    },
+    purchaseUrl: 'https://buy.polar.sh/polar_cl_NDBVJEcDg86XesVQrWXKfQWigC5i6ewSbrYRx4WULaI',
+    featureImage: {
+      src: '/quantum-photoboom/quantum-photoboom-interface.png',
+      alt: 'Screenshot of the Quantum Photoboom interface showing the editing sidebar, main preview, and filmstrip.'
+    },
+    documents: [
+      {
+        slug: 'getting-started',
+        title: 'Getting Started & Features Guide',
+        summary:
+          'Learn the layout, menus, export options, cropping workflow, and adjustment tools available in Quantum Photoboom.',
+        to: '/quantum-photoboom/getting-started',
+        sourcePath: '/quantum-photoboom/getting-started.md'
+      },
+      {
+        slug: 'end-user-license-agreement',
+        title: 'End User License Agreement',
+        summary: 'Review the license terms that govern installation, activation, refunds, and permitted use.',
+        to: '/quantum-photoboom/end-user-license-agreement',
+        sourcePath: '/quantum-photoboom/end-user-license-agreement.md'
+      },
+      {
+        slug: 'privacy-policy',
+        title: 'Privacy Policy',
+        summary:
+          'See how Quantum Photoboom handles local photobooks and edits, licensing, and third-party services such as Polar.sh and GitHub.',
+        to: '/quantum-photoboom/privacy-policy',
+        sourcePath: '/quantum-photoboom/privacy-policy.md'
+      },
+      {
+        slug: 'terms-of-service',
+        title: 'Terms of Service',
+        summary: 'Read the purchase, usage, refund, and legal terms that apply to Quantum Photoboom.',
+        to: '/quantum-photoboom/terms-of-service',
+        sourcePath: '/quantum-photoboom/terms-of-service.md'
+      }
+    ],
+    releases: [
+      {
+        version: 'v0.1.0',
+        name: 'v0.1.0 — First Release',
+        publishedAt: '2026-05-15',
+        notes: ['The initial release of Quantum Photoboom.'],
+        downloads: [
+          {
+            label: 'Quantum.Photoboom_0.1.0_x64-setup.exe',
+            url: 'https://github.com/HerbDesignGroup/Quantum-Photoboom/releases/latest/download/Quantum.Photoboom_0.1.0_x64-setup.exe',
+            size: '9.04 MB'
+          }
+        ]
+      }
+    ]
   }
 ]
 
@@ -282,5 +355,11 @@ export function getProductBySlug(slug: string) {
 export function getQvaDocumentBySlug(slug: string) {
   return products
     .find((product) => product.slug === 'q-virtual-amp')
+    ?.documents?.find((document) => document.slug === slug)
+}
+
+export function getQuantumPhotoboomDocumentBySlug(slug: string) {
+  return products
+    .find((product) => product.slug === 'quantum-photoboom')
     ?.documents?.find((document) => document.slug === slug)
 }
