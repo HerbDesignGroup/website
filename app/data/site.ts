@@ -275,8 +275,8 @@ export const products: ProductDefinition[] = [
     summary:
       'Quantum Photoboom is a robust desktop photo editor built for RAW files and common image formats. Organize work into photobooks, refine tone and color with a full editing toolkit, and export finished images locally—all without handing your photos off to the cloud.',
     description: [
-      'Quantum Photoboom gives photographers a focused environment to import, review, and edit entire sets: a live preview, histogram-aware controls, masking with on-device assisted selection, and a filmstrip that keeps every image in the photobook within reach.',
-      'From global exposure and color grading to lens corrections, noise reduction, and batch-friendly export to JPEG, PNG, or WEBP, the app is designed for a fast, dependable workflow that stays on your machine. Purchase a license, download the latest build, and start processing your next shoot.'
+      'Quantum Photoboom gives photographers a focused environment to import, review, and edit entire sets: a live preview, histogram-aware controls, masking, and a filmstrip that keeps every image in the photobook within reach.',
+      'From global exposure and color grading to lens corrections, noise reduction, and batch-friendly export to JPEG, PNG, or WEBP, the app is designed for a fast, dependable workflow that stays on your machine. Download today and get started with your free 14-day free trial!  No sign up or credit card necessary!'
     ],
     releaseFallbackTag: 'v0.1.0',
     releaseSource: {
