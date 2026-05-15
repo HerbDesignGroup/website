@@ -3,6 +3,7 @@ import { useProductReleases } from '~/composables/useProductReleases'
 import { getProductBySlug } from '~/data/site'
 
 const route = useRoute()
+const router = useRouter()
 const matchedProduct = getProductBySlug(route.params.slug as string)
 
 if (!matchedProduct) {
@@ -50,10 +51,48 @@ useSeoMeta({
   ogTitle: `${product.name} | Herb Design Group`,
   ogDescription: product.summary
 })
+
+function hasPolarCheckoutId() {
+  const raw = route.query.checkout_id
+  const id = Array.isArray(raw) ? raw[0] : raw
+  return typeof id === 'string' && id.trim().length > 0
+}
+
+const showPolarCheckoutThanks = ref(false)
+
+function syncPolarCheckoutThanks() {
+  showPolarCheckoutThanks.value = hasPolarCheckoutId()
+}
+
+function dismissPolarCheckoutThanks() {
+  showPolarCheckoutThanks.value = false
+
+  if (!hasPolarCheckoutId()) {
+    return
+  }
+
+  const nextQuery = { ...route.query }
+  delete nextQuery.checkout_id
+  router.replace({ path: route.path, query: nextQuery })
+}
+
+onMounted(() => {
+  syncPolarCheckoutThanks()
+})
+
+watch(() => route.query.checkout_id, () => {
+  syncPolarCheckoutThanks()
+})
 </script>
 
 <template>
   <div>
+    <PurchaseThanksDialog
+      :open="showPolarCheckoutThanks"
+      :product-name="product.name"
+      @close="dismissPolarCheckoutThanks"
+    />
+
     <HeroSection
       eyebrow="Product"
       :title="product.name"

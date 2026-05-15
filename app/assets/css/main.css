@@ -527,6 +527,86 @@ summary,
   color: #fff;
 }
 
+.purchase-thanks-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(19, 28, 17, 0.42);
+  backdrop-filter: blur(6px);
+}
+
+.purchase-thanks-dialog {
+  position: relative;
+  width: min(calc(100% - 2rem), 28rem);
+  padding: clamp(1.35rem, 3vw, 1.85rem);
+  margin: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 246, 0.96));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 64px rgba(19, 28, 17, 0.18);
+  overflow: hidden;
+}
+
+.purchase-thanks-dialog::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.purchase-thanks-dialog .eyebrow {
+  margin: 0 0 0.5rem;
+}
+
+.purchase-thanks-dialog h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 1rem + 1vw, 1.65rem);
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.purchase-thanks-dialog__intro,
+.purchase-thanks-dialog__detail {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.purchase-thanks-dialog__detail:last-of-type {
+  margin-bottom: 1.25rem;
+}
+
+.purchase-thanks-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.purchase-thanks-dialog__close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(98, 114, 84, 0.08);
+  color: var(--text);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.purchase-thanks-dialog__close:hover {
+  background: rgba(98, 114, 84, 0.14);
+}
+
 .section-block {
   position: relative;
   padding: clamp(2.5rem, 4vw, 4.5rem) 0;
