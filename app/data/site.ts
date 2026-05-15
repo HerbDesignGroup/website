@@ -261,7 +261,7 @@ export const products: ProductDefinition[] = [
         downloads: [
           {
             label: 'QVirtualAmpInstaller.msi',
-            url: 'https://github.com/HerbDesignGroup/Q-Virtual-Amp/releases/latest/download/QVirtualAmpInstaller.msi',
+            url: 'https://github.com/HerbDesignGroup/Q-Virtual-Amp/releases/download/v1.0.1/QVirtualAmpInstaller.msi',
             size: '5.39 MB'
           }
         ]
@@ -331,7 +331,7 @@ export const products: ProductDefinition[] = [
         downloads: [
           {
             label: 'Quantum.Photoboom_0.1.0_x64-setup.exe',
-            url: 'https://github.com/HerbDesignGroup/Quantum-Photoboom/releases/latest/download/Quantum.Photoboom_0.1.0_x64-setup.exe',
+            url: 'https://github.com/HerbDesignGroup/Quantum-Photoboom/releases/download/v0.1.0/Quantum.Photoboom_0.1.0_x64-setup.exe',
             size: '9.04 MB'
           }
         ]

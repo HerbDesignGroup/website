@@ -18,8 +18,13 @@ const latestRelease = computed(() => releases.value[0] ?? null)
 const olderReleases = computed(() => releases.value.slice(1))
 const purchaseUrl = computed(() => product.purchaseUrl)
 const latestDownloadUrl = computed(() => {
-  if (product.releaseSource?.provider === 'github' && product.releaseSource.latestAssetName) {
-    return `https://github.com/${product.releaseSource.owner}/${product.releaseSource.repo}/releases/latest/download/${encodeURIComponent(product.releaseSource.latestAssetName)}`
+  const src = product.releaseSource
+  if (
+    src?.provider === 'github'
+    && src.latestAssetName
+    && product.releaseFallbackTag
+  ) {
+    return `https://github.com/${src.owner}/${src.repo}/releases/download/${encodeURIComponent(product.releaseFallbackTag)}/${encodeURIComponent(src.latestAssetName)}`
   }
 
   return latestRelease.value?.downloads?.[0]?.url || purchaseUrl.value
